@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap');
+
+body {
+  font-family: 'Crimson Text', serif;
+  background: #2a2522;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(80, 40, 40, 0.15) 0%, transparent 50%);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  padding: 40px 20px;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(0deg, rgba(0,0,0,0.05) 0px, transparent 1px, transparent 2px, rgba(0,0,0,0.05) 3px),
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.05) 0px, transparent 1px, transparent 2px, rgba(0,0,0,0.05) 3px);
+  opacity: 0.3;
+  pointer-events: none;
+  animation: flicker 3s ease-in-out infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.25; }
+}
+
+/* Estilos para as sections (página principal) */
+section {
+  max-width: 500px;
+  width: 90%;
+  margin: 20px auto;
+  padding: 40px 35px;
+  background: #f4e8d8;
+  background-image: 
+    linear-gradient(to bottom, rgba(101, 67, 33, 0.02) 0%, rgba(101, 67, 33, 0.05) 100%),
+    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4z8DAwMgABXAGNgGwSgwVAFbmAgXxnGwzAAAAAElFTkSuQmCC');
+  border-radius: 4px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 0 60px rgba(139, 69, 19, 0.2);
+  text-align: center;
+  position: relative;
+  border: 1px solid #8b6f47;
+  animation: slideIn 0.8s ease-out;
+  transform-style: preserve-3d;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #4a3628, #6b5444, #4a3628);
+  border-radius: 4px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+section::after {
+  content: '🕯️';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.6));
+  animation: candleFlicker 2s ease-in-out infinite;
+}
+
+@keyframes candleFlicker {
+  0%, 100% { 
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.6));
+  }
+  50% { 
+    opacity: 0.8;
+    filter: drop-shadow(0 0 15px rgba(255, 140, 0, 0.8));
+  }
+}
+
+/* Container para página de upload */
+.container {
+  max-width: 450px;
+  width: 90%;
+  margin: 20px auto;
+  padding: 50px 40px;
+  background: #f4e8d8;
+  background-image: 
+    linear-gradient(to bottom, rgba(101, 67, 33, 0.02) 0%, rgba(101, 67, 33, 0.05) 100%),
+    url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGklEQVQIW2NkYGD4z8DAwMgABXAGNgGwSgwVAFbmAgXxnGwzAAAAAElFTkSuQmCC');
+  border-radius: 4px;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 0 60px rgba(139, 69, 19, 0.2);
+  text-align: center;
+  position: relative;
+  border: 1px solid #8b6f47;
+  animation: slideIn 0.8s ease-out;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #4a3628, #6b5444, #4a3628);
+  border-radius: 4px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.container::after {
+  content: '🕯️';
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.6));
+  animation: candleFlicker 2s ease-in-out infinite;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) rotateX(10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #3d2817;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-family: 'Special Elite', cursive;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #3d2817;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-family: 'Special Elite', cursive;
+  border-bottom: 2px solid #8b6f47;
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+h4 {
+  margin: 20px 0;
+  color: #4a3628;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Estilos para imagens */
+img {
+  border-radius: 2px;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    inset 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin: 20px 0;
+  border: 3px solid #8b6f47;
+  filter: sepia(20%) contrast(1.1);
+}
+
+img:hover {
+  transform: scale(1.02) rotate(0.5deg);
+  filter: sepia(10%) contrast(1.1);
+}
+
+.w-75 {
+  width: 75%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* Estilos para mensagens ocultas */
+.message {
+  margin-top: 25px;
+  padding: 25px;
+  background: rgba(227, 218, 201, 0.8);
+  border-radius: 2px;
+  border: 2px solid #8b6f47;
+  border-style: double;
+  animation: fadeIn 0.8s ease-in;
+  box-shadow: inset 0 0 20px rgba(61, 40, 23, 0.1);
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px) scale(0.95);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Estilos para botões secretos e links */
+.secret-btn,
+a.secret-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: linear-gradient(to bottom, #6b4423, #4a3628);
+  border: 2px solid #8b6f47;
+  color: #f4e8d8;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  margin: 10px 0;
+  font-family: 'Special Elite', cursive;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.secret-btn::before,
+a.secret-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.secret-btn:hover::before,
+a.secret-btn:hover::before {
+  left: 100%;
+}
+
+.secret-btn:hover,
+a.secret-btn:hover {
+  background: linear-gradient(to bottom, #7a4f29, #5a4230);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-color: #a0875f;
+  color: #fff5e6;
+}
+
+.secret-btn:active,
+a.secret-btn:active {
+  transform: translateY(0);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para botões gerais */
+button {
+  padding: 14px 40px;
+  background: linear-gradient(to bottom, #6b4423, #4a3628);
+  border: 2px solid #8b6f47;
+  color: #f4e8d8;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Special Elite', cursive;
+  text-transform: uppercase;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, #7a4f29, #5a4230);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  border-color: #a0875f;
+  color: #fff5e6;
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Estilos para input de arquivo */
+input[type="file"] {
+  margin-bottom: 30px;
+  padding: 15px;
+  width: 100%;
+  border: 2px dashed #8b6f47;
+  border-radius: 2px;
+  background: rgba(227, 218, 201, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #3d2817;
+  font-size: 14px;
+  box-sizing: border-box;
+  font-family: 'Crimson Text', serif;
+}
+
+input[type="file"]:hover {
+  border-color: #a0875f;
+  background: rgba(227, 218, 201, 0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="file"]::file-selector-button {
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #6b4423, #4a3628);
+  border: 1px solid #8b6f47;
+  color: #f4e8d8;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+  font-family: 'Special Elite', cursive;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: linear-gradient(to bottom, #7a4f29, #5a4230);
+  transform: scale(1.02);
+}
+
+/* Status message */
+#status {
+  margin-top: 25px;
+  font-size: 16px;
+  min-height: 20px;
+  color: #3d2817;
+  font-weight: 500;
+  animation: fadeIn 0.8s ease-in;
+  font-style: italic;
+}
+
+/* Efeito de lacre de cera */
+section:first-of-type::before {
+  content: '💌';
+  position: absolute;
+  top: -30px;
+  right: 20px;
+  font-size: 40px;
+  filter: drop-shadow(0 4px 8px rgba(139, 0, 0, 0.5));
+  animation: sealPulse 3s ease-in-out infinite;
+}
+
+@keyframes sealPulse {
+  0%, 100% { 
+    transform: scale(1) rotate(-5deg);
+  }
+  50% { 
+    transform: scale(1.05) rotate(5deg);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  section,
+  .container {
+    padding: 30px 25px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  button,
+  .secret-btn,
+  a.secret-btn {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+
+  .w-75 {
+    width: 90%;
+  }
+}
+
+/* Efeito de papel envelhecido nas bordas */
+section,
+.container {
+  position: relative;
+}
+
+section::after,
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px;
+  box-shadow: inset 0 0 40px rgba(61, 40, 23, 0.15);
+  pointer-events: none;
+}
